@@ -1,11 +1,11 @@
 import { Alert, Button, Keyboard, Text, TextInput, TouchableWithoutFeedback, View } from 'react-native';
-import { ButtonGame, Card, Input } from '../../components/index';
+import { ButtonGame, Card, Input, NumberContainer } from '../../components/index';
 
-import Colors from '../../constants/colors';
+import colors from '../../constants/colors';
 import { styles } from './styles';
 import { useState } from 'react';
 
-const StartGame = () => {
+const StartGame = ({ onStart }) => {
 	const [number, setNumber] = useState('');
 	const [confirmed, setConfirmed] = useState(false);
 	const [selectedNumber, setSelectedNumber] = useState(null);
@@ -28,7 +28,13 @@ const StartGame = () => {
 			setNumber('');
 		}
 	};
-
+	const confirmedNumber = confirmed ? (
+		<Card style={styles.confirmedContainer}>
+			<Text style={styles.confirmedTitle}>Número elejido</Text>
+			<NumberContainer number={selectedNumber} />
+			<ButtonGame title={'Empezar'} onPress={() => onStart(selectedNumber)} color={colors.persianOrange} />
+		</Card>
+	) : null;
 	return (
 		<TouchableWithoutFeedback
 			onPress={() => {
@@ -51,10 +57,11 @@ const StartGame = () => {
 						onChangeText={onHandleChange}
 					/>
 					<View style={styles.buttonContainer}>
-						<ButtonGame title={'Limpiar'} onPress={onHandleCleanInput} color={Colors.secondary}></ButtonGame>
-						<ButtonGame title={'Confirmar'} onPress={onHandleConfirm} color={Colors.primary}></ButtonGame>
+						<ButtonGame title={'Limpiar'} onPress={onHandleCleanInput} color={colors.secondary} />
+						<ButtonGame title={'Confirmar'} onPress={onHandleConfirm} color={colors.primary} />
 					</View>
 				</Card>
+				{confirmedNumber}
 			</View>
 		</TouchableWithoutFeedback>
 	);

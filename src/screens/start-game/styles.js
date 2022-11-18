@@ -33,4 +33,24 @@ export const styles = StyleSheet.create({
 		borderRadius: 30,
 		overflow: 'hidden',
 	},
+	confirmedContainer: {
+		paddingVertical: 30,
+		paddingHorizontal: 50,
+		marginVertical: 20,
+		alignItems: 'center',
+	},
+	confirmedTitle: {
+		fontSize: 18,
+		color: colors.grey,
+	},
+	containerNumber: {
+		marginVertical: 20,
+		padding: 10,
+		backgroundColor: colors.primary,
+		borderRadius: 5,
+	},
+	selectedNumber: {
+		fontSize: 22,
+		color: colors.white,
+	},
 });
