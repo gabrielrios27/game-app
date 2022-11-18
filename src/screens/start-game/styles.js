@@ -8,9 +8,29 @@ export const styles = StyleSheet.create({
 		alignItems: 'center',
 		marginVertical: 20,
 	},
-	title: { fontSize: 22, color: Colors.black },
-	card: { marginVertical: 20, alignItems: 'center' },
+	title: {
+		fontSize: 22,
+		color: Colors.black,
+	},
+	card: {
+		paddingVertical: 30,
+		marginVertical: 20,
+		alignItems: 'center',
+	},
 	cardTitle: { fontSize: 18, color: Colors.black },
-	input: { fontSize: 18, marginVertical: 10 },
-	buttonContainer: { flexDirection: 'row', width: '80%', justifyContent: 'space-evenly' },
+	input: {
+		fontSize: 18,
+		width: 60,
+		height: 40,
+	},
+	buttonContainer: {
+		flexDirection: 'row',
+		width: '80%',
+		justifyContent: 'space-evenly',
+	},
+	button: {
+		width: 130,
+		borderRadius: 30,
+		overflow: 'hidden',
+	},
 });
