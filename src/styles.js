@@ -7,4 +7,8 @@ export const styles = StyleSheet.create({
 		backgroundColor: Colors.white,
 		alignItems: 'center',
 	},
+	spinnerContainer: {
+		height: '100%',
+		justifyContent: 'center',
+	},
 });

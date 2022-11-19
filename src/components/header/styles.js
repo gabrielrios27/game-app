@@ -12,5 +12,6 @@ export const styles = StyleSheet.create({
 	title: {
 		color: Colors.white,
 		marginBottom: 25,
+		fontFamily: 'MPlusBlack',
 	},
 });
