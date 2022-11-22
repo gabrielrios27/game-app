@@ -9,6 +9,7 @@ const StartGame = ({ onStart }) => {
 	const [number, setNumber] = useState('');
 	const [confirmed, setConfirmed] = useState(false);
 	const [selectedNumber, setSelectedNumber] = useState(null);
+
 	const onHandleChange = (value) => {
 		setNumber(value.replace(/[^0-9]/g, ''));
 	};

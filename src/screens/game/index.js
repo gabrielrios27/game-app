@@ -1,5 +1,5 @@
-import { ButtonGame, Card, NumberContainer } from '../../components';
-import { Text, View } from 'react-native';
+import { ButtonGame, Card, ModalGoBack, NumberContainer } from '../../components';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 
 import colors from '../../constants/colors';
 import { styles } from './styles';
@@ -15,11 +15,19 @@ const generateRandomNumber = (min, max, current) => {
 		return randomNumber;
 	}
 };
-const Game = ({ userNumber }) => {
+const Game = ({ userNumber, goBack }) => {
 	const [currentGuess, setCurrentGuess] = useState(generateRandomNumber(1, 100, userNumber));
+	const [modalVisible, setModalVisible] = useState(false);
 	const onHandleLower = () => {
 		setCurrentGuess(generateRandomNumber(1, 100, userNumber));
 	};
+	const onHandlerModalGoBack = (value) => {
+		if (value) {
+			goBack();
+		}
+		setModalVisible(false);
+	};
+
 	return (
 		<View style={styles.container}>
 			<Card style={styles.card}>
@@ -30,6 +38,10 @@ const Game = ({ userNumber }) => {
 					<ButtonGame title={'Mayor'} onPress={onHandleLower} color={colors.burntOrange} />
 				</View>
 			</Card>
+			<TouchableOpacity style={styles.containerGoBack} onPress={() => setModalVisible(true)}>
+				<Image style={styles.goBack} source={require('../../../assets/back.png')} />
+			</TouchableOpacity>
+			<ModalGoBack modalVisible={modalVisible} onHandlerModalGoBack={onHandlerModalGoBack} />
 		</View>
 	);
 };

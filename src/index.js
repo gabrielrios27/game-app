@@ -1,4 +1,4 @@
-import { ActivityIndicator, Text, View } from 'react-native';
+import { ActivityIndicator, Image, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 import { Game, StartGame } from './screens/index';
 
 import { Header } from './components/index';
@@ -15,12 +15,16 @@ export default function App() {
 	});
 
 	const [userNumber, setUserNumber] = useState(null);
+
 	const onStart = (selectedNumber) => {
 		setUserNumber(selectedNumber);
 	};
+	const goBack = () => {
+		setUserNumber(null);
+	};
 	const headerTitle = userNumber ? 'A jugar!' : 'Bienvenido';
 	let content = <StartGame onStart={onStart} />;
-	if (userNumber) content = <Game userNumber={userNumber} />;
+	if (userNumber) content = <Game userNumber={userNumber} goBack={goBack} />;
 
 	if (!loaded)
 		return (

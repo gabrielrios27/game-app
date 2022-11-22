@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
 		flex: 1,
 		backgroundColor: Colors.white,
 		alignItems: 'center',
+		paddingTop: 90,
 	},
 	spinnerContainer: {
 		height: '100%',
