@@ -1,4 +1,4 @@
-import { Alert, Button, Keyboard, Text, TextInput, TouchableWithoutFeedback, View } from 'react-native';
+import { Alert, Keyboard, Text, TouchableWithoutFeedback, View } from 'react-native';
 import { ButtonGame, Card, Input, NumberContainer } from '../../components/index';
 
 import colors from '../../constants/colors';

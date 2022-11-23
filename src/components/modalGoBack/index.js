@@ -1,4 +1,4 @@
-import { Button, Modal, Text, View } from 'react-native';
+import { Modal, Text, View } from 'react-native';
 
 import ButtonGame from '../buttonGame';
 import colors from '../../constants/colors';

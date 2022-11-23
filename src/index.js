@@ -1,4 +1,4 @@
-import { ActivityIndicator, Image, TouchableHighlight, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 import { Game, StartGame } from './screens/index';
 
 import { Header } from './components/index';
